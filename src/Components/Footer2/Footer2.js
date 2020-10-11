@@ -1,93 +1,102 @@
 import React from 'react'
-import BannerSlider from '../BannerSlider/BannerSlider'
 import PropTypes from 'prop-types'
-import CardSlider2s from '../CardSlider2/CardSlider2'
-import Header2 from '../Header2/Header2' 
-import Footer2 from '../Footer2/Footer2'
-import FooterLink from '../FooterLink/FooterLink'
-export const AllComponent = ({DataFields,HeaderData}) => {
-    
+import './Footer2.css';
+import FooterMenu from '../FooterMenuLink/FooterMenuLink'
+import {BrowserRouter as Router} from 'react-router-dom'; 
+import FooterLink from '../FooterLink/FooterLink';
+
+//import '../Images/twitter'
+export const Footer2=({title,subtitle,bottomContent,DataFields,HeaderData}) => {
     return (
-        
-        <>
-            
-{/* 
-
-
-       <div className="stock-container">
-        {DataFields.map((item,index)=>
-        <div key={index}>
-        <BannerSlider
-        Heading={item.title}
-        ImgSrc={item.src}
-        buttonName="Click Me"
-        description={item.description}
-        />
+        <div>
+            <div className="Footer2">
+                <div className="layer1">
+                    <div className="left">
+                        <h4> {title} </h4>
+                        <h6>{subtitle}</h6>
+                    </div>
+                    <div className="right">
+                        <Router>
+                            {DataFields.map((item,index)=>
+                                <div key={index}>
+                                    <FooterLink 
+                                        logoImg={item.src}
+                                        logoUrl={item.src}
+                                        logoAlt={item.title}
+                                    />
+                                </div>
+                            )}
+                        </Router>
+                    </div>
+                </div>  <br></br>
+                <div className="layer2">
+                    {HeaderData.map((item,index)=>
+                        <div key={index}>
+                            <FooterMenu 
+                                FooterMenuTitles={item.title}                           
+                                FooterMenuLinks={item.href}
+                            />
+                        </div>
+                    )}
+                </div> <br></br>             
+                <div className="layer3">
+                    <p> <small>{bottomContent}</small></p>
+                </div>
+            </div>
+               
         </div>
-        )
-            
-        
-        }
-      </div> 
-
-      {DataFields.map((item,index)=>
-        <div key={index}>
-        <CardSlider2s
-        heading={item.title}
-        img={item.src}        
-        description={item.description}
-        href={item.src}
-        />
-        </div>
-        )
-        } */}
-            
-<Footer2 
-
-title="giffgaff runs on the o2 network"
-subtitle="Copyright © 2020 giffgaff"
-bottomContent="giffgaff Limited is authorised and regulated by the Financial Conduct Authority and is listed on the Financial Services Register. Firm Reference Number - 680957. Registered address – giffgaff Limited, 260 Bath Road, Slough SL1 4DX. Company Number - 04196996."
-
-/>
-
-
-    </>
-        
-    );
+    )
 }
 
-AllComponent.propTypes = {
+Footer2.propTypes = {
 
     DataFields:PropTypes.array,
     HeaderData:PropTypes.array
     
 }
 
-AllComponent.defaultProps = {
+Footer2.defaultProps = {
     HeaderData:[ 
         {
-            "title":"Find & WatchTv",
+            "title":"About us",
             "href":"abc.com"
         },
         {
-            "title":"Products & Packages",
+            "title":"Accessibility",
             "href":"abcd.com"
         },
         {
-            "title": "My Account",
+            "title": "Affliates",
             "href":"nhju.com"
         },
         {
-            "title":"Help",
+            "title":"jobs",
             "href":"ljfs.com"
         },
         {
-            "title":"Contact",
+            "title":"Contact us",
             "href":"ljfs.com"
         },   
     
         {
-            "title":"About",
+            "title":"Mobile App",
+            "href":"ljfs.com"
+        },
+        {
+            "title":"Terms and Conditions",
+            "href":"ljfs.com"
+        },
+        {
+            "title":"Privacy policy",
+            "href":"ljfs.com"
+        },   
+    
+        {
+            "title":"cookie policy",
+            "href":"ljfs.com"
+        },
+        {
+            "title":"Modern Salivary statement",
             "href":"ljfs.com"
         }
      ],
@@ -137,4 +146,4 @@ AllComponent.defaultProps = {
     ]
 }
 
-export default AllComponent
+export default Footer2
