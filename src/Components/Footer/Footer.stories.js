@@ -6,6 +6,5 @@ export default{
     component:Footer
 }
 
-export const Footers = () => <Footer
-
-/>
+ const FooterTemplates = (args) => <Footer {...args }/>
+ export const ViewFooter = FooterTemplates.bind({});
