@@ -8,24 +8,24 @@ export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText
     return (
         <div>
             <div className="Footer">
-                <div className="Footers">
+                <div className="Footers item1">
                     <div className="Footer-logo">
                         <img src={FooterLogo} alt="img logo" />
                     </div>
                 </div>
                 {
                     FooterMenuData.map((item,index)=>
-                        <div className="Footers" key={index}>
+                        <div  key={index} className={item.className}>
                             <h4>{item.footerMenu}</h4>
                         </div>
                     )
                 }
                 
-                <div className="Footers">
+                <div className="Footers item5">
                     <h4>{FooterTitle}</h4>
                     {FooterText}
                 </div>
-                <div className="Footers">
+                <div className="Footers item6">
                     <div className="FooterLinks">
                     {
                         SubFooterMenuData.map((item,index)=>
@@ -38,7 +38,7 @@ export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText
                         )}
                     </div>                   
                 </div>
-                <div className="Footers">
+                <div className="Footers item7">
                     <div className="FooterLinks">
                     {                               
                         ImportantLinks.map((item,index)=>
@@ -51,8 +51,8 @@ export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText
                         )}
                     </div>
                 </div>
-                <div className="Footers">
-                    <iframe src={map} />
+                <div className="Footers item8">
+                    <iframe src={map} className="map"/>
                     <h5>Telephone: {telephone}  </h5>
                     <h5>Fax: {fax}  </h5>
                 </div>                
@@ -68,7 +68,6 @@ export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText
         </div>
     )
 }
-
 
 Footer.propTypes = {
     FooterTitle: PropTypes.string,    
@@ -98,17 +97,20 @@ Footer.defaultProps = {
             "footerMenu":"About Vodafone !dea",
             "title":"About us",
             "href":"abc.com",
+            "className":"item2"
             
         },
         {
             "footerMenu":"Importants Links",
             "title":"Accessibility",
-            "href":"abcd.com"
+            "href":"abcd.com",
+            "className":"item3"
         },
         {
             "footerMenu":"Contact Us",
             "title": "Affliates",
-            "href":"nhju.com"
+            "href":"nhju.com",
+            "className":"item4"
         }
         
      ],
@@ -152,10 +154,7 @@ Footer.defaultProps = {
             "url":"abc.com"
         },
         
-    ]
-
-
-    
+    ]  
     
 }
 
