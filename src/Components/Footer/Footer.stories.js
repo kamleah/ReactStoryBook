@@ -3,8 +3,18 @@ import Footer from './Footer'
 
 export default{
     title:'Form/Footer',
-    component:Footer
+    component:Footer,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+        background:{control:'color'},
+        color:{control:'color'},
+        
+          },
+          
+    
 }
 
- const FooterTemplates = (args) => <Footer {...args }/>
+ const FooterTemplates = (args) => <Footer  {...args }/>
  export const ViewFooter = FooterTemplates.bind({});
+ 
+ 

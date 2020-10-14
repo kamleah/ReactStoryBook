@@ -6,4 +6,6 @@ export default{
     component:BuynowCard
 }
 
-export const BuynowCard1 = () => <BuynowCard />
+const BuynowCards = (args) => <BuynowCard {...args} />
+export const BuynowCard1 = BuynowCards.bind({});
+

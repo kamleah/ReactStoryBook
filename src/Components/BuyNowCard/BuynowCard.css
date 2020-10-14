@@ -13,6 +13,8 @@
 .card-top img{
     border-radius: 15px;
     background-color: royalblue;
+    width: 157px;
+    height: 218px;
 }
 .card-badget{
     background: red;

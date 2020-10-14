@@ -6,4 +6,5 @@ export default{
     component:CardSLider
 }
 
-export const CardSlider = () => <CardSLider size='cardSlider' />
+const CardSlider = (args) => <CardSLider size='cardSlider' {...args} />
+export const ViewCardSlider = CardSlider.bind({});

@@ -1,29 +1,34 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './BuynowCard.css'
-import BannerSlider from '../BannerSlider/BannerSlider'
-//import { BannerSlider } from '../BannerSlider/BannnerSlider.stories'
 import PropTypes from 'prop-types'
-export default class BuynowCard extends Component {
-    // constructor(props) {
-    //     super(props){
-
-    //     }
-    //   }
-    render() {
+export const BuynowCard =({
+    Img,
+    Imgalt,
+    BadgesTitle,
+    ProductTitle,
+    Price,
+    ProductName,
+    Days,
+    ProductTitle2,
+    ButtonTitle
+}) => {
+    
+    
+    
         return (
             <div>
                 <div className="cards">
                     <div className="card-top">
                         <div className="card-img">
-                            <img src="https://m.media-amazon.com/images/I/61tuQdl2yLL._AC_UY218_.jpg" alt="abc"></img>
+                            <img src={Img} alt={Imgalt}></img>
                         </div>
                         <div className="card-details">
                             <div className="card-badget">
-                                <h4>New Phone</h4>
+                                <h4>{BadgesTitle}</h4>
                             </div>
                             <div className="details">
-                                <h4>Samasung Galaxy Note20 Ultra 5g</h4>
-                                <p>RRP RMS 199.00</p>
+                                <h4>{ProductTitle}</h4>
+                                <p>{Price}</p>
                             </div>
                         </div>
                     </div>
@@ -31,23 +36,96 @@ export default class BuynowCard extends Component {
                         <div className="card-botton-left">
                             <h4>EasyPhone<sup>TM</sup> OWN</h4>
                             <p>From</p>
-                            <h3>RM129</h3>
-                            <p>/month</p>
+                            <h3>{ProductName}</h3>
+                            <p>/{Days}</p>
                         </div>
                         <div className="card-botton-right">
                             <h4>Device Bundle</h4>
                             <p>From</p>
-                            <h3>RM2998</h3>
-                            <p>/month</p>
+                            <h3>{ProductTitle2}</h3>
+                            <p>/{Days}</p>
                         </div>
                     </div>
                     <div>
-                        <button className="buyNow">Buy Now</button>
+                        <button className="buyNow">{ButtonTitle}</button>
                     </div>
                 </div>
             </div>
         )
     }
-}
 
 
+
+    BuynowCard.propTypes = {
+        Img: PropTypes.string,
+        Imgalt: PropTypes.string,
+        ProductTitle: PropTypes.string,
+        BadgesTitle: PropTypes.string,
+        Price: PropTypes.string,
+        ProductName:PropTypes.string,
+        Days:PropTypes.string,
+        ProductTitle2:PropTypes.string,
+        ButtonTitle:PropTypes.string,
+        BuynowCardData:PropTypes.array
+      };
+      
+      BuynowCard.defaultProps = {
+        Img:"https://m.media-amazon.com/images/I/61tuQdl2yLL._AC_UY218_.jpg",
+        Imgalt:"image",
+        ProductTitle:"Samasung Galaxy Note20 Ultra 5g",
+        BadgesTitle:"New Phone",
+        Price:"RRP RMS 199.00",
+        ProductName:"RM129",
+        Days:"month",
+        ProductTitle2:"RM2998",
+        ButtonTitle:"Buy Now",
+        
+        BuynowCardData: [
+          {
+            Img:"https://m.media-amazon.com/images/I/61tuQdl2yLL._AC_UY218_.jpg",
+            Imgalt:"image",
+            ProductTitle:"Samasung Galaxy Note20 Ultra 5g",
+            BadgesTitle:"New Phone",
+            Price:"RRP RMS 199.00",
+            ProductName:"RM129",
+            Days:"month",
+            ProductTitle2:"RM2998",
+            ButtonTitle:"Buy Now",
+          },
+          {
+            Img:"https://m.media-amazon.com/images/I/61tuQdl2yLL._AC_UY218_.jpg",
+            Imgalt:"image",
+            ProductTitle:"Samasung Galaxy Note20 Ultra 5g",
+            BadgesTitle:"New Phone",
+            Price:"RRP RMS 199.00",
+            ProductName:"RM129",
+            Days:"month",
+            ProductTitle2:"RM2998",
+            ButtonTitle:"Buy Now",
+          },
+          {
+            Img:"https://m.media-amazon.com/images/I/61tuQdl2yLL._AC_UY218_.jpg",
+            Imgalt:"image",
+            ProductTitle:"Samasung Galaxy Note20 Ultra 5g",
+            BadgesTitle:"New Phone",
+            Price:"RRP RMS 199.00",
+            ProductName:"RM129",
+            Days:"month",
+            ProductTitle2:"RM2998",
+            ButtonTitle:"Buy Now",
+          },
+          {
+            Img:"https://m.media-amazon.com/images/I/61tuQdl2yLL._AC_UY218_.jpg",
+            Imgalt:"image",
+            ProductTitle:"Samasung Galaxy Note20 Ultra 5g",
+            BadgesTitle:"New Phone",
+            Price:"RRP RMS 199.00",
+            ProductName:"RM129",
+            Days:"month",
+            ProductTitle2:"RM2998",
+            ButtonTitle:"Buy Now",
+          }
+        ]
+      };
+      
+      export default BuynowCard;

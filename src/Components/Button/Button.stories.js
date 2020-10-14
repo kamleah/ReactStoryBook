@@ -1,12 +1,15 @@
-import React from 'react'
+ import React from 'react'
 import Button from './Button'
 
     export default{
         title: 'Form/Button',
         component:Button,
+        argTypes: {
+            backgroundColor: { control: 'color' },
+              },
     }
 
-    export const Primary = () => <Button varient='primarys'>Primary</Button>
+    export const Primary = (args) => <Button {...args}>Primary</Button>
     export const Secondary = () => <Button  varient='secondarys'>Secondary</Button>
     export const Success = () => <Button varient='successs'>Success</Button>
     export const Danger = () => <Button varient='dangers'>Danger</Button>
@@ -19,3 +22,4 @@ PrimaryA.args = {
     children:'Primary Args',
     size:'larges'
 }
+

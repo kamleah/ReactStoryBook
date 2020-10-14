@@ -4,15 +4,19 @@ import FooterMenu from '../FooterMenuLink/FooterMenuLink'
 import PropTypes from 'prop-types'
 
 
-export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText,SocialIcons, FooterMenuData,BottomContent, FooterLogo,map,telephone,fax,CIN}) => {
+
+export const  Footer = ({backgroundColor,TopBackgroundColor,FontColorBootomContent,color,background,ImportantLinks,SubFooterMenuData,FooterTitle,FooterText, FooterMenuData,BottomContent, FooterLogo,map,telephone,fax,CIN,...rest}) => {
     return (
-        <div>
-            <div className="Footer">
+        <div>           
+            <div className="Footer"
+                style={backgroundColor && { backgroundColor }}
+            >
                 <div className="Footers item1">
                     <div className="Footer-logo">
                         <img src={FooterLogo} alt="img logo" />
                     </div>
                 </div>
+                
                 {
                     FooterMenuData.map((item,index)=>
                         <div  key={index} className={item.className}>
@@ -20,6 +24,7 @@ export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText
                         </div>
                     )
                 }
+               
                 
                 <div className="Footers item5">
                     <h4>{FooterTitle}</h4>
@@ -57,12 +62,12 @@ export const  Footer = ({ImportantLinks,SubFooterMenuData,FooterTitle,FooterText
                     <h5>Fax: {fax}  </h5>
                 </div>                
             </div>
-             <div className="FooterBottom">
+             <div className="FooterBottom" style= {background && {background} } >
                 <div className="FooterBottoms">
-                    <p>{BottomContent}</p>
+                    <p style= {color && {color} }>{BottomContent}</p>
                 </div>
                 <div className="FooterBottoms">
-                    <h2>{CIN}</h2>
+                    <h2 style= {color && {color} }>{CIN}</h2>
                 </div>
             </div>
         </div>
@@ -77,27 +82,31 @@ Footer.propTypes = {
     ImportantLinks:PropTypes.string,
     SubFooterMenuData:PropTypes.string,
     boo:PropTypes.string,
-    CIN:PropTypes.string
+    CIN:PropTypes.string,
+    backgroundColor:PropTypes.string,
+    background:PropTypes.string
+
 }
 
 Footer.defaultProps = {
+    FooterTitle:"VodaFone Idea Limited",
+    BottomContent:"This website uses its own third-party cookies. Find out more about usage in our Privacy Ploicy page. Copyright Reserved with Vodafone Idea Limited (formerly Idea Cellular Limited).Vodafone Idea Limited (Formerly Idea Cellular Limited), An Aditya Birla Group & Vodafone partnership, Suman Towers, Plot No.18, Sector 11, Gandhinagar – 382011, Gujarat.CIN L32100GJ1996PLC030976, T: +91-796671 4000, F: +91-79 2323 2251",
+    FooterLogo:"https://www.vodafoneidea.com/content/dam/vodafone-microsite/images/micrositeimages/newhomepageicon/Vi.svg",
     CIN:"CIN: L32100GJ1996PLC030976",
     boo:"This website uses its own third-party cookies. Find out more about usage in our <span> <Router><Link>Privacy Ploicy</Link></Router></span> page. Copyright Reserved with Vodafone Idea Limited (formerly Idea Cellular Limited).Vodafone Idea Limited (Formerly Idea Cellular Limited), An Aditya Birla Group & Vodafone partnership, Suman Towers, Plot No.18, Sector 11, Gandhinagar – 382011, Gujarat.CIN L32100GJ1996PLC030976, T: +91-796671 4000, F: +91-79 2323 2251",
-    FooterLogo:"https://www.vodafoneidea.com/content/dam/vodafone-microsite/images/micrositeimages/newhomepageicon/Vi.svg",
-    FooterTitle:"VodaFone Idea Limited",
     FooterText:"Vodafone Idea Limited is an Aditya Birla Group and Vodafone Group partnership. The Company provides pan India Voice and Data services across 2G, 3G and 4G platform.",
-    BottomContent:"This website uses its own third-party cookies. Find out more about usage in our Privacy Ploicy page. Copyright Reserved with Vodafone Idea Limited (formerly Idea Cellular Limited).Vodafone Idea Limited (Formerly Idea Cellular Limited), An Aditya Birla Group & Vodafone partnership, Suman Towers, Plot No.18, Sector 11, Gandhinagar – 382011, Gujarat.CIN L32100GJ1996PLC030976, T: +91-796671 4000, F: +91-79 2323 2251",
     map:"https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3781.5915315841235!2d73.7447765!3d18.5924452!3m2!1i1024!2i768!4f13.1!3m2!1m1!2sVodafone%20Idea%20limited!5e0!3m2!1sen!2sin!4v1602126805357!5m2!1sen!2sin",
     telephone:"+91 79 6671 4000",
     fax:"+91 79 2323 225100",
-
+    backgroundColor:"#e00",
+    background:"#212234",
     FooterMenuData:[ 
         
         {
             "footerMenu":"About Vodafone !dea",
             "title":"About us",
             "href":"abc.com",
-            "className":"item2"
+            "className":"item2 "
             
         },
         {
